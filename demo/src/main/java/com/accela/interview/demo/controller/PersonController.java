@@ -13,16 +13,16 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping("/{id}")
-    public @ResponseBody ResponseEntity<Person> getAllTutorials(@PathVariable(required = true) String id) {
+    public ResponseEntity<Person> getPersonById(@PathVariable(required = true) String id) {
         return personService.getPersonById(id);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Person> createTutorial(@RequestBody Person person) {
+    public ResponseEntity<Person> addPerson(@RequestBody Person person) {
        return personService.addPerson(person);
     }
     @DeleteMapping("/delete/{id}")
-    public void deletePost(@PathVariable String id) throws Exception {
+    public void deletePerson(@PathVariable String id) throws Exception {
         personService.deletePersonById(id);
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -35,6 +36,7 @@ public class PersonService {
         return p;
     }
 
+    @Transactional
     public ResponseEntity<Person> addPerson(@RequestBody Person person) {
         try {
             Person _person = personRepository
@@ -45,6 +47,7 @@ public class PersonService {
         }
     }
 
+    @Transactional
     public void deletePersonById(String id) throws Exception {
         long inputId = Long.parseLong(id);
         personRepository.findById(inputId).map(person -> {

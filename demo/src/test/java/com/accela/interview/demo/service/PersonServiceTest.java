@@ -1,4 +1,4 @@
-package com.accela.interview.demo;
+package com.accela.interview.demo.service;
 
 import com.accela.interview.demo.entity.Person;
 import com.accela.interview.demo.service.PersonService;
