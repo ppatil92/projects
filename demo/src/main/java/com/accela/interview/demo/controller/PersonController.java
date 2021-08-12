@@ -21,4 +21,8 @@ public class PersonController {
     public ResponseEntity<Person> createTutorial(@RequestBody Person person) {
        return personService.addPerson(person);
     }
+    @DeleteMapping("/delete/{id}")
+    public void deletePost(@PathVariable String id) throws Exception {
+        personService.deletePersonById(id);
+    }
 }

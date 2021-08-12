@@ -45,4 +45,12 @@ public class PersonService {
         }
     }
 
+    public void deletePersonById(String id) throws Exception {
+        long inputId = Long.parseLong(id);
+        personRepository.findById(inputId).map(person -> {
+            personRepository.delete(person);
+            return ResponseEntity.ok().build();
+        }).orElseThrow(() -> new Exception("id " + id + " not found"));
+    }
+
 }
