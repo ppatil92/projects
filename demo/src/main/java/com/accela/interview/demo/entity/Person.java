@@ -2,6 +2,10 @@ package com.accela.interview.demo.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +20,10 @@ public class Person implements Serializable {
 
     @Column(name = "firstname")
     private String firstName;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="person", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("person")
+    private List<Address> addressList;
 
 
     @Column(name = "lastname")

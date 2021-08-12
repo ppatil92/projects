@@ -1,6 +1,7 @@
 package com.accela.interview.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
@@ -30,11 +31,9 @@ public class Address {
     @Column(name = "city")
     private String city;
 
-    //For loose coupling
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "person_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id",referencedColumnName="id")
+    @JsonIgnoreProperties("addressList")
     private Person person;
 
 
