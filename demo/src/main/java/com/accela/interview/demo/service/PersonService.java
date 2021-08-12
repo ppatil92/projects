@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,10 @@ public class PersonService {
 
     @Autowired
     private PersonRepository personRepository;
+
+    public List<Person> getAllPerson() {
+        return personRepository.findAll();
+    }
 
     public ResponseEntity<Person> getPersonById(String id) {
         ResponseEntity<Person> p = null;

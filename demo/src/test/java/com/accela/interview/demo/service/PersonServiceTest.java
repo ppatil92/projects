@@ -5,6 +5,10 @@ import com.accela.interview.demo.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+/**
+ * Test with actual context laod with h2
+ */
 @SpringBootTest
 class PersonServiceTest {
 

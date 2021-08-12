@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/person")
 public class PersonController {
@@ -17,6 +19,11 @@ public class PersonController {
         return personService.getPersonById(id);
     }
 
+    @GetMapping("/getAllPerson")
+    public @ResponseBody List<Person> getAllPersons() {
+        return personService.getAllPerson();
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Person> addPerson(@RequestBody Person person) {
        return personService.addPerson(person);
@@ -25,4 +32,5 @@ public class PersonController {
     public void deletePerson(@PathVariable String id) throws Exception {
         personService.deletePersonById(id);
     }
+
 }
