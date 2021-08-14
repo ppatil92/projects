@@ -1,9 +1,9 @@
-##Setup and run
+## Setup and run
 Build :- mvn clean install
 
 Run :- mvn spring-boot:run
 
-##add person 
+## add person 
 http://localhost:8080/person/add
 ```
 {
@@ -12,7 +12,7 @@ http://localhost:8080/person/add
     "lastName": "pp"
 }
 ```
-##add Address
+## add Address
 http://localhost:8080/address/add
 ```
 {
@@ -31,9 +31,9 @@ http://localhost:8080/address/add
 
 ```
 
-##Person edit
+## Person edit
 http://localhost:8080/person/edit
-```aidl
+```
 {
     "id": 1,
     "firstName": "pp22",
@@ -42,7 +42,7 @@ http://localhost:8080/person/edit
 ```
 
 
-##Other apis 
+## Other apis 
 See Person And Address Controller for full list of apis <br>
 http://localhost:8080/address/getAllAddress <br>
 http://localhost:8080/person/getCount
