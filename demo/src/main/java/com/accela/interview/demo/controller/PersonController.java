@@ -28,6 +28,7 @@ public class PersonController {
     public ResponseEntity<Person> addPerson(@RequestBody Person person) {
        return personService.addPerson(person);
     }
+
     @DeleteMapping("/delete/{id}")
     public void deletePerson(@PathVariable String id) throws Exception {
         personService.deletePersonById(id);

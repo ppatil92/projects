@@ -1,5 +1,6 @@
 package com.accela.interview.demo.service;
 
+import com.accela.interview.demo.entity.Address;
 import com.accela.interview.demo.entity.Person;
 import com.accela.interview.demo.repository.AddressRepository;
 import org.junit.Test;
@@ -26,17 +27,16 @@ public class AddressServiceTest {
 
     @Test
     public void deleteAddressId_success() throws Exception {
-        Optional<Person> p = Optional.of(new Person());
-        p.get().setId(1L);
+        Optional<Address> p = Optional.of(new Address());
+        p.get().setAddressid(1L);
         Mockito.when(addressRepository.findById(1L)).thenReturn(Optional.of(p.get()));
         addressService.deleteAddressId("1");
     }
 
     @Test(expected = Exception.class)
     public void deleteAddressId_noIdFound_exception() throws Exception {
-        Optional<Person> p = Optional.of(new Person());
-        p.get().setId(1L);
-        Mockito.when(addressRepository.findById(2L)).thenReturn(Optional.of(p.get()));
+        Optional<Address> p = Optional.of(new Address());
+        p.get().setAddressid(1L);
         addressService.deleteAddressId("1");
     }
 }

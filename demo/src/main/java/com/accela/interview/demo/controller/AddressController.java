@@ -1,11 +1,14 @@
 package com.accela.interview.demo.controller;
 
+import com.accela.interview.demo.entity.Address;
+import com.accela.interview.demo.entity.Person;
 import com.accela.interview.demo.service.AddressService;
+import com.accela.interview.demo.vo.AddressVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/address")
@@ -19,4 +22,17 @@ public class AddressController {
     public void deletePerson(@PathVariable String id) throws Exception {
         addressService.deleteAddressId(id);
     }
+
+    @PostMapping("/add")
+    public void addAddress(@RequestBody AddressVO addressVO) {
+        addressService.addAddress(addressVO);
+    }
+
+    @GetMapping("/getAllAddress")
+    public @ResponseBody
+    List<Address> getAllAddress() {
+        return addressService.getAddresses();
+    }
+
+
 }

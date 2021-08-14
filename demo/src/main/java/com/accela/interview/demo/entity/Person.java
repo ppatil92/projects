@@ -2,6 +2,7 @@ package com.accela.interview.demo.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -21,11 +22,6 @@ public class Person implements Serializable {
     @Column(name = "firstname")
     private String firstName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy="person", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("person")
-    private List<Address> addressList;
-
-
     @Column(name = "lastname")
     private String lastName;
 
@@ -33,4 +29,5 @@ public class Person implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
 }

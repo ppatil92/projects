@@ -42,7 +42,7 @@ public class PersonService {
     }
 
     @Transactional
-    public ResponseEntity<Person> addPerson(@RequestBody Person person) {
+    public ResponseEntity<Person> addPerson(Person person) {
         try {
             Person _person = personRepository
                     .save(new Person(person.getFirstName() ,person.getLastName()));

@@ -31,9 +31,8 @@ public class Address {
     @Column(name = "city")
     private String city;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "person_id",referencedColumnName="id")
-    @JsonIgnoreProperties("addressList")
     private Person person;
 
 
