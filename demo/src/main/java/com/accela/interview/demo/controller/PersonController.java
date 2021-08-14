@@ -29,6 +29,11 @@ public class PersonController {
        return personService.addPerson(person);
     }
 
+    @PostMapping("/edit")
+    public ResponseEntity<Person> edit(@RequestBody Person person) {
+        return personService.editPerson(person);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deletePerson(@PathVariable String id) throws Exception {
         personService.deletePersonById(id);
