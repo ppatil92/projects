@@ -39,4 +39,9 @@ public class PersonController {
         personService.deletePersonById(id);
     }
 
+    @GetMapping("/getCount")
+    public @ResponseBody long getCount() {
+        return personService.getCount();
+    }
+
 }

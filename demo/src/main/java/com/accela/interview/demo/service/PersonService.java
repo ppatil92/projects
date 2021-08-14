@@ -20,6 +20,10 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
+    public long getCount() {
+        return personRepository.count();
+    }
+
     public List<Person> getAllPerson() {
         return personRepository.findAll();
     }
