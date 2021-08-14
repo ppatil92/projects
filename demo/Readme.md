@@ -7,7 +7,6 @@ Run :- mvn spring-boot:run
 http://localhost:8080/person/add
 ```
 {
-    "id": 1,
     "firstName": "pp",
     "lastName": "pp"
 }
