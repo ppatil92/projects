@@ -2,3 +2,5 @@
 {"id": "scss","state": "STARTED","timestamp": 1630748464}
 {"id": "scs","state": "FINISHED","type": "APPLICATION_LOG","host": "1245","timestamp": 1630748464}
 {"id": "scss","state": "FINISHED","timestamp": 1630748537}
+{"id": "scss22","state": "FINISHED","timestamp": 1630748537}
+{"id": "scss22","state": "STARTED","timestamp": 1630748535}
