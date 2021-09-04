@@ -1,5 +1,5 @@
 
-#Build and Run <br>
+# Build and Run 
 mvn clean install <br>
 mvn spring-boot:run 
 
@@ -7,11 +7,11 @@ mvn spring-boot:run
 FileService is called from main class
 To see output logon to h2console. 
 
-##config 
+## config 
 change file path in application.properties <br>
 default is set to file.path = src/main/resources/sample.txt
 
-#h2 console
+# h2 console
 http://localhost:8080/h2-ui/
 
 jdbc url :-
