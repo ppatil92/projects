@@ -1,0 +1,4 @@
+{"id": "scs","state": "STARTED","type": "APPLICATION_LOG","host": "1245","timestamp": 1630748329}
+{"id": "scss","state": "STARTED","timestamp": 1630748464}
+{"id": "scs","state": "FINISHED","type": "APPLICATION_LOG","host": "1245","timestamp": 1630748464}
+{"id": "scss","state": "FINISHED","timestamp": 1630748537}

@@ -3,12 +3,14 @@ package com.pratham.fileio;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pratham.fileio.model.LogVO;
+import com.pratham.fileio.repository.LogRepository;
 import com.pratham.fileio.service.FileService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +34,13 @@ public class FileioApplicationTests {
 	@InjectMocks
 	FileService fileService;
 
-	@Test
-	public void fileRead_filefound_NoException() {
-		String fileName = "src/test/resources/sample.txt";
-		Assert.assertEquals("Ok",fileService.readFile(fileName));
-	}
+	@Mock
+	LogRepository logRepository;
 
 	@Test
-	public void fileRead_fileNotFound_IOException() {
-		String fileName = "";
-		Assert.assertEquals("ERROR",fileService.readFile(fileName));
+	public void processFile_filefound_NoException() {
+
+		Assert.assertEquals("Ok",fileService.processFile());
 	}
 
 }
